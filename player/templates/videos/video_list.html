@@ -15,10 +15,16 @@
       <h2>{{ video.title }}</h2>
       — {{ video.author.username }}
     </li>
+
+    {% if video.thumbnail %}
+      <img src="{{ video.thumbnail.url }}" width="200" alt="preview">
+    {% endif %}
     <video width="640" controls>
          <source src="{{ video.video_file.url }}" type="video/mp4">
     </video>
   {% empty %}
+
+
     <li>Пока нет видео</li>
   {% endfor %}
 </ul>
