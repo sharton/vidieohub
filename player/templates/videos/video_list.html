@@ -15,6 +15,9 @@
       <h2>{{ video.title }}</h2>
       — {{ video.author.username }}
     </li>
+    <video width="640" controls>
+         <source src="{{ video.video_file.url }}" type="video/mp4">
+    </video>
   {% empty %}
     <li>Пока нет видео</li>
   {% endfor %}
